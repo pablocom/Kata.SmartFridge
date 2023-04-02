@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kata.SmartFridge", "Kata.SmartFridge\Kata.SmartFridge.csproj", "{3CEB097F-0A9E-4288-8499-534F4C3545A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kata.SmartFridge.UnitTests", "Kata.SmartFridge.UnitTests\Kata.SmartFridge.UnitTests.csproj", "{2AD7C5C2-F0C8-46E2-9EED-791C7D934AC3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3CEB097F-0A9E-4288-8499-534F4C3545A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CEB097F-0A9E-4288-8499-534F4C3545A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CEB097F-0A9E-4288-8499-534F4C3545A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CEB097F-0A9E-4288-8499-534F4C3545A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AD7C5C2-F0C8-46E2-9EED-791C7D934AC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AD7C5C2-F0C8-46E2-9EED-791C7D934AC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AD7C5C2-F0C8-46E2-9EED-791C7D934AC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AD7C5C2-F0C8-46E2-9EED-791C7D934AC3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F038FFD2-8D1B-4433-B672-FD42EDFE4B66}
+	EndGlobalSection
+EndGlobal
