@@ -2,11 +2,11 @@
 
 namespace Kata.SmartFridge;
 
-public class FridgePrinter
+public class ItemsPrinter
 {
     private readonly IClock _clock;
 
-    public FridgePrinter(IClock clock)
+    public ItemsPrinter(IClock clock)
     {
         _clock = clock;
     }

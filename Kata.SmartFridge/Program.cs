@@ -1,7 +1,7 @@
 ﻿using Kata.SmartFridge;
 using NodaTime;
 
-var fridge = new Fridge(SystemClock.Instance, new FridgePrinter(SystemClock.Instance));
+var fridge = new Fridge(SystemClock.Instance, new ItemsPrinter(SystemClock.Instance));
 
 fridge.Open();
 fridge.AddItem("Chicken", SystemClock.Instance.GetCurrentInstant().Minus(Duration.FromHours(3)), ItemCondition.Sealed);

@@ -8,9 +8,9 @@ public class Fridge
 
     private readonly ICollection<IEvent> _events = new List<IEvent>();
     private readonly IClock _clock;
-    private readonly FridgePrinter _fridgePrinter;
+    private readonly ItemsPrinter _fridgePrinter;
 
-    public Fridge(IClock clock, FridgePrinter fridgePrinter)
+    public Fridge(IClock clock, ItemsPrinter fridgePrinter)
     {
         _clock = clock;
         _fridgePrinter = fridgePrinter;

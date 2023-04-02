@@ -1,6 +1,7 @@
 using FluentAssertions;
 using NodaTime;
 using NSubstitute;
+using Xunit;
 
 namespace Kata.SmartFridge.UnitTests;
 
@@ -11,7 +12,7 @@ public class FridgeTests
     [Fact]
     public void ItemCannotBeAddedIfFridgeIsClosed()
     {
-        var fridge = new Fridge(_clock, new FridgePrinter(_clock));
+        var fridge = new Fridge(_clock, new ItemsPrinter(_clock));
 
         var action = () => fridge.AddItem("anyName", Instant.FromUtc(2023, 2, 4, 20, 17), ItemCondition.Sealed);
 
@@ -23,7 +24,7 @@ public class FridgeTests
     {
         var now = Instant.FromUtc(2021, 10, 18, 20, 17);
         AssumeCurrentDateIs(now);
-        var fridge = new Fridge(_clock, new FridgePrinter(_clock));
+        var fridge = new Fridge(_clock, new ItemsPrinter(_clock));
 
         fridge.Open();
         fridge.AddItem("Milk", Instant.FromUtc(2021, 10, 21, 0, 0), ItemCondition.Sealed);
@@ -55,7 +56,7 @@ public class FridgeTests
         var originalExpirationDate = Instant.FromUtc(2021, 10, 21, 0, 0);
         var expectedExpirationDate = originalExpirationDate.Minus(Duration.FromHours(2));
         AssumeCurrentDateIs(now);
-        var fridge = new Fridge(_clock, new FridgePrinter(_clock));
+        var fridge = new Fridge(_clock, new ItemsPrinter(_clock));
 
         fridge.Open();
         fridge.AddItem("Milk", originalExpirationDate, ItemCondition.Sealed);
@@ -76,7 +77,7 @@ public class FridgeTests
         var originalExpirationDate = Instant.FromUtc(2021, 10, 21, 0, 0);
         var expectedExpirationDate = originalExpirationDate.Minus(Duration.FromHours(10));
         AssumeCurrentDateIs(now);
-        var fridge = new Fridge(_clock, new FridgePrinter(_clock));
+        var fridge = new Fridge(_clock, new ItemsPrinter(_clock));
 
         fridge.Open();
         fridge.AddItem("Milk", originalExpirationDate, ItemCondition.Opened);
@@ -94,7 +95,7 @@ public class FridgeTests
     public void ItemsAreReportedCorrectly()
     {
         var now = Instant.FromUtc(2021, 10, 18, 0, 0);
-        var fridge = new Fridge(_clock, new FridgePrinter(_clock));
+        var fridge = new Fridge(_clock, new ItemsPrinter(_clock));
 
         fridge.Open();
         fridge.AddItem("Lettuce", Instant.FromUtc(2021, 10, 20, 0, 0), ItemCondition.Sealed);
@@ -103,7 +104,7 @@ public class FridgeTests
         fridge.AddItem("Milk", Instant.FromUtc(2021, 10, 17, 0, 0), ItemCondition.Sealed);
 
 
-        var reporter = new FridgePrinter(_clock);
+        var reporter = new ItemsPrinter(_clock);
 
         using var stringWriter = new StringWriter();
         Console.SetOut(stringWriter);
